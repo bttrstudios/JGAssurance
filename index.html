@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JG Quality Health Assurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/jg-design-system.css" />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR COMPONENT 
+  ════════════════════════════════════════════════ -->
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo" aria-label="JG Quality Health Assurance Home">
+        <img src="/assets/logo/JG_LOGO_transparent.png" alt="JG Quality Health Assurance" />
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav aria-label="Main navigation">
+        <ul class="navbar__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="#book" class="navbar__cta" aria-label="Book a free consultation">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="1" y="2" width="14" height="13" rx="2"/>
+          <path d="M1 6h14M5 1v2M11 1v2"/>
+        </svg>
+        Book Free Consultation
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button
+        class="navbar__hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <nav class="navbar__mobile" id="mobile-menu" aria-label="Mobile navigation">
+        <a href="#about"           onclick="closeMenu()">About</a>
+        <a href="/services.html"   onclick="closeMenu()">Services</a>
+        <a href="#how-it-works"    onclick="closeMenu()">How It Works</a>
+        <a href="/contact.html"    onclick="closeMenu()">Contact</a>
+        <a href="#book" class="navbar__cta" onclick="closeMenu()">
+            Book Free Consultation
+        </a>
+    </nav>
+  </header>
+
+  <!-- END NAVBAR COMPONENT ════════════════════════ -->
+
+  <!-- ═══════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════ -->
+
+<section class="hero" id="home">
+  <!-- Background image with overlay -->
+  <div class="hero__bg"></div>
+
+  <div class="container">
+    <div class="hero__content">
+
+      <!-- Left: Text -->
+      <div class="hero__text">
+        <span class="hero__eyebrow">Medicare & Health Insurance Specialist</span>
+
+        <h1>Coverage You Can <em>Count On</em></h1>
+
+        <p>
+          Jesse Gutierrez, MBA, RSSA® helps individuals and families in Laredo navigate
+          Medicare, ACA Marketplace, and Social Security planning — with honest guidance
+          and no pressure.
+        </p>
+
+        <!-- Trust badges -->
+        <div class="hero__badges">
+          <div class="hero__badge">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.91 5.3L10 14.1l-4.76 2.51.91-5.3L2.3 7.6l5.3-.8z"/>
+            </svg>
+            RSSA® Certified
+          </div>
+          <div class="hero__badge">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="14" height="13" rx="2"/>
+              <path d="M3 8h14M7 2v3M13 2v3"/>
+            </svg>
+            Free Consultations
+          </div>
+          <div class="hero__badge">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 18s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/>
+              <circle cx="10" cy="8" r="2.5"/>
+            </svg>
+            Serving Laredo, TX
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="hero__ctas">
+          <a href="#book" class="btn btn--primary btn--lg">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;flex-shrink:0;">
+              <rect x="1" y="2" width="14" height="13" rx="2"/>
+              <path d="M1 6h14M5 1v2M11 1v2"/>
+            </svg>
+            Book Free Consultation
+          </a>
+          <a href="#services" class="btn btn--ghost btn--lg">View Services</a>
+        </div>
+      </div>
+
+      <!-- Right: Card -->
+      <div class="hero__card">
+        <div class="hero__card-inner">
+           <img src="/assets/pictures/headshots/headshot1.jpeg" 
+     alt="Jesse Gutierrez, MBA RSSA® — Independent Insurance Broker" 
+     class="hero__headshot-img" />
+
+          <div class="hero__card-body">
+            <p class="hero__card-name">Jesse Gutierrez</p>
+            <p class="hero__card-title">MBA, RSSA® — Independent Insurance Broker</p>
+
+            <div class="hero__card-divider"></div>
+
+            <div class="hero__card-stats">
+              <div class="hero__stat">
+                <span class="hero__stat-number">10+</span>
+                <span class="hero__stat-label">Plans Offered</span>
+              </div>
+              <div class="hero__stat-sep"></div>
+              <div class="hero__stat">
+                <span class="hero__stat-number">Free</span>
+                <span class="hero__stat-label">Consultations</span>
+              </div>
+              <div class="hero__stat-sep"></div>
+              <div class="hero__stat">
+                <span class="hero__stat-number">Local</span>
+                <span class="hero__stat-label">Laredo, TX</span>
+              </div>
+            </div>
+
+            <a href="tel:9562823488" class="hero__card-phone">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;">
+                <path d="M3 3h4l2 5-2.5 1.5a11 11 0 005 5L13 12l5 2v4a2 2 0 01-2 2C6.5 20 0 13.5 0 5a2 2 0 012-2z" transform="translate(1,1) scale(0.9)"/>
+              </svg>
+              (956) 282-3488
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- END HERO SECTION ════════════════════════════ -->
+
+
+ <!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-bar__inner">
+
+      <div class="stats-bar__item">
+        <span class="stats-bar__number">10+</span>
+        <span class="stats-bar__label">Insurance Plans Available</span>
+      </div>
+
+      <div class="stats-bar__sep"></div>
+
+      <div class="stats-bar__item">
+        <span class="stats-bar__number">2</span>
+        <span class="stats-bar__label">Appointment Types</span>
+      </div>
+
+      <div class="stats-bar__sep"></div>
+
+      <div class="stats-bar__item">
+        <span class="stats-bar__number">100%</span>
+        <span class="stats-bar__label">Independent — No Carrier Bias</span>
+      </div>
+
+      <div class="stats-bar__sep"></div>
+
+      <div class="stats-bar__item">
+        <span class="stats-bar__number">Free</span>
+        <span class="stats-bar__label">Initial Consultation</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- END STATS BAR ═══════════════════════════════ -->
+
+
+<!-- ═══════════════════════════════════════════════
+     MISSION BANNER
+════════════════════════════════════════════════ -->
+
+<section class="mission-banner">
+  <div class="container container--narrow">
+    <div class="mission-banner__inner">
+
+      <!-- Large decorative quote mark -->
+      <div class="mission-banner__quote-mark" aria-hidden="true">&ldquo;</div>
+
+      <blockquote class="mission-banner__quote">
+        Our goal is to provide clear guidance, personalized service, and long-term support
+        so clients can choose the coverage that best fits their healthcare and financial needs.
+      </blockquote>
+
+      <div class="mission-banner__attr">
+        <div class="mission-banner__line"></div>
+        <span>Jesse Gutierrez, MBA, RSSA® — Founder, JG Quality Health Assurance LLC</span>
+        <div class="mission-banner__line"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- END MISSION BANNER ══════════════════════════ -->
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════════ -->
+
+<section class="about section--alt" id="about">
+  <div class="container">
+
+    <div class="about__grid">
+
+      <!-- Left: Image + credential cards -->
+      <div class="about__image-col">
+        <div class="about__image-wrap">
+          <img
+            src="/assets/pictures/headshots/headshot2.jpg"
+            alt="Jesse Gutierrez, MBA RSSA®"
+            class="about__photo"
+          />
+          <!-- Floating credential card -->
+          <div class="about__cred-card">
+            <div class="about__cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3 6 6 1-4.5 4.5 1.1 6.5L12 17l-5.6 3 1.1-6.5L3 9l6-1z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="about__cred-title">RSSA® Certified</p>
+              <p class="about__cred-sub">Registered Social Security Analyst</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Bio content -->
+      <div class="about__content">
+        <span class="section-label">About Jesse</span>
+        <h2>Your Local Medicare & Retirement Planning Expert</h2>
+        <div class="divider"></div>
+
+        <p>
+          J G Quality Health Assurance LLC is an independent insurance brokerage dedicated
+          to helping individuals and families understand their health coverage options and
+          make confident decisions about their future.
+        </p>
+        <p>
+          Led by Jesse Gutierrez, MBA — a Registered Social Security Analyst (RSSA®) —
+          the practice specializes in Medicare planning, ACA Marketplace coverage, and
+          retirement income strategies. As an independent broker, Jesse works for
+          <em>you</em>, not the insurance carriers, giving you unbiased guidance across
+          every major plan available.
+        </p>
+
+        <!-- Credential pills -->
+        <div class="about__credentials">
+          <div class="about__credential">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.91 5.3L10 14.1l-4.76 2.51.91-5.3L2.3 7.6l5.3-.8z"/>
+            </svg>
+            <span>MBA — Business Administration</span>
+          </div>
+          <div class="about__credential">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.91 5.3L10 14.1l-4.76 2.51.91-5.3L2.3 7.6l5.3-.8z"/>
+            </svg>
+            <span>RSSA® — Registered Social Security Analyst</span>
+          </div>
+          <div class="about__credential">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.91 5.3L10 14.1l-4.76 2.51.91-5.3L2.3 7.6l5.3-.8z"/>
+            </svg>
+            <span>Licensed Independent Insurance Broker — Texas</span>
+          </div>
+          <div class="about__credential">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.91 5.3L10 14.1l-4.76 2.51.91-5.3L2.3 7.6l5.3-.8z"/>
+            </svg>
+            <span>Medicare Advantage & Supplement Specialist</span>
+          </div>
+        </div>
+
+        <div class="about__ctas">
+          <a href="#book" class="btn btn--primary">Book a Free Consultation</a>
+          <a href="#services" class="btn btn--secondary">View Services</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- END ABOUT SECTION ═══════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════════════ -->
+
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-bar__inner">
+
+      <div class="trust-badge">
+        <svg class="trust-badge__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 2l2.4 4.8 5.3.8-3.85 3.75.91 5.3L10 14.1l-4.76 2.51.91-5.3L2.3 7.6l5.3-.8z"/>
+        </svg>
+        RSSA® Certified Analyst
+      </div>
+
+      <div class="trust-bar__sep"></div>
+
+      <div class="trust-badge">
+        <svg class="trust-badge__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="16" height="13" rx="2"/>
+          <path d="M2 7h16"/>
+          <path d="M6 1v3M14 1v3"/>
+        </svg>
+        MBA — Business Administration
+      </div>
+
+      <div class="trust-bar__sep"></div>
+
+      <div class="trust-badge">
+        <svg class="trust-badge__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 1l2.5 5 5.5.8-4 3.9.95 5.5L10 13.5l-4.95 2.6.95-5.5L2 7.8l5.5-.8z"/>
+        </svg>
+        Independent — No Carrier Bias
+      </div>
+
+      <div class="trust-bar__sep"></div>
+
+      <div class="trust-badge">
+        <svg class="trust-badge__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 18s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/>
+          <circle cx="10" cy="8" r="2.5"/>
+        </svg>
+        Serving Laredo, TX & Surrounding Areas
+      </div>
+
+      <div class="trust-bar__sep"></div>
+
+      <div class="trust-badge">
+        <svg class="trust-badge__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3h4l2 5-2.5 1.5a11 11 0 005 5L13 12l5 2v4a1 1 0 01-1 1C7 20 1 13 1 5a1 1 0 011-1z"/>
+        </svg>
+        Free Consultations — No Obligation
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- END TRUST BAR ═══════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════
+     SERVICES PREVIEW
+════════════════════════════════════════════════ -->
+
+<section class="services-preview section--alt" id="services">
+  <div class="container">
+
+    <!-- Section heading -->
+    <div class="section-heading text-center">
+      <span class="section-label">What We Offer</span>
+      <h2>Coverage for Every Stage of Life</h2>
+      <div class="divider divider--center"></div>
+      <p>
+        As an independent broker, Jesse works with all major carriers to find the plan
+        that fits your needs — not the other way around.
+      </p>
+    </div>
+
+    <!-- 6-card preview grid -->
+    <div class="services-preview__grid">
+
+      <!-- Medicare Advantage -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h4>Medicare Advantage Plans</h4>
+        <p>All-in-one Medicare coverage bundling hospital, medical, and often prescription drug benefits through private carriers.</p>
+      </div>
+
+      <!-- Medicare Supplement -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h4>Medicare Supplement (Medigap)</h4>
+        <p>Fill the gaps in Original Medicare coverage — including copays, coinsurance, and deductibles — with a standardized supplement plan.</p>
+      </div>
+
+      <!-- ACA Marketplace -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h4>ACA / Marketplace Coverage</h4>
+        <p>Navigate the Affordable Care Act marketplace with expert guidance to find the right plan and maximize your available subsidies.</p>
+      </div>
+
+      <!-- Social Security -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h4>Social Security Optimization</h4>
+        <p>As a Registered Social Security Analyst (RSSA®), Jesse helps you determine the ideal time and strategy to maximize your lifetime benefits.</p>
+      </div>
+
+      <!-- Part D -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/>
+          </svg>
+        </div>
+        <h4>Prescription Drug Plans (Part D)</h4>
+        <p>Compare standalone Medicare Part D plans to ensure your medications are covered at the lowest possible out-of-pocket cost.</p>
+      </div>
+
+      <!-- Dental Vision Hearing -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+        </div>
+        <h4>Dental, Vision & Hearing Plans</h4>
+        <p>Supplemental coverage for dental, vision, and hearing needs — benefits often missing from standard Medicare plans.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA row -->
+    <div class="services-preview__cta">
+      <p>Looking for something specific? Jesse offers 10+ plan types to fit your unique situation.</p>
+      <a href="/services.html" class="btn btn--primary">View All Services</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- END SERVICES PREVIEW ════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════════════ -->
+
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+
+    <div class="section-heading text-center">
+      <span class="section-label">The Process</span>
+      <h2>Getting Covered Is Simple</h2>
+      <div class="divider divider--center"></div>
+      <p>Three straightforward steps — no jargon, no pressure, no obligation.</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <h4>Book a Free Consultation</h4>
+        <p>Schedule a 30 or 60 minute call at a time that works for you. Jesse meets with you in person, by phone, or virtually — your choice.</p>
+      </div>
+
+      <div class="step__connector" aria-hidden="true">
+        <svg viewBox="0 0 40 24" fill="none">
+          <path d="M0 12h36M28 4l8 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="step">
+        <div class="step__number">2</div>
+        <h4>Review Your Options</h4>
+        <p>Jesse reviews your health needs, budget, and situation — then walks you through every plan option available to you in plain language.</p>
+      </div>
+
+      <div class="step__connector" aria-hidden="true">
+        <svg viewBox="0 0 40 24" fill="none">
+          <path d="M0 12h36M28 4l8 8-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="step">
+        <div class="step__number">3</div>
+        <h4>Get Covered</h4>
+        <p>Once you've chosen your plan, Jesse handles the enrollment process from start to finish and stays available for questions long after.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- END HOW IT WORKS ════════════════════════════ -->
+
+
+<!-- ═══════════════════════════════════════════════
+     BOOKING SECTION
+════════════════════════════════════════════════ -->
+
+<section class="booking section--dark" id="book">
+  <div class="container">
+
+    <div class="booking__inner">
+
+      <!-- Left: Copy -->
+      <div class="booking__content">
+        <span class="section-label">Book an Appointment</span>
+        <h2>Ready to Get Started?</h2>
+        <div class="divider"></div>
+        <p>
+          Schedule your free consultation directly on Jesse's calendar.
+          Choose a 30-minute standard consultation or a 60-minute session
+          for Social Security and Medicare planning.
+        </p>
+
+        <div class="booking__details">
+          <div class="booking__detail">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="16" height="14" rx="2"/>
+              <path d="M2 7h16M6 1v3M14 1v3"/>
+            </svg>
+            <div>
+              <strong>Monday – Friday</strong>
+              <span>9:00 AM – 5:00 PM</span>
+            </div>
+          </div>
+          <div class="booking__detail">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="16" height="14" rx="2"/>
+              <path d="M2 7h16M6 1v3M14 1v3"/>
+            </svg>
+            <div>
+              <strong>Saturday & Sunday</strong>
+              <span>By Appointment Only</span>
+            </div>
+          </div>
+          <div class="booking__detail">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10" cy="10" r="8"/>
+              <path d="M10 5v5l3 3"/>
+            </svg>
+            <div>
+              <strong>Appointment Length</strong>
+              <span>30 min standard · 60 min planning session</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendly popup button -->
+        <div class="booking__cta">
+          <a href=""
+             class="btn btn--ghost btn--lg"
+             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/r-guerra-bttrstudios/30min'});return false;">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;flex-shrink:0;">
+              <rect x="1" y="2" width="14" height="13" rx="2"/>
+              <path d="M1 6h14M5 1v2M11 1v2"/>
+            </svg>
+
+            Schedule a Free Consultation
+          </a>
+          <p class="booking__cta-note">Free, no-obligation — takes less than 2 minutes to book</p>
+        </div>
+
+      </div>
+
+      <!-- Right: Visual panel -->
+      <div class="booking__visual">
+        <div class="booking__visual-inner">
+          <img
+            src="/assets/logo/JG LOGO.png"
+            alt="JG Quality Health Assurance"
+            class="booking__visual-logo"
+          />
+          <h3>JG Quality Health Assurance LLC</h3>
+          <p>Jesse Gutierrez, MBA, RSSA®</p>
+          <div class="booking__visual-divider"></div>
+
+          <div class="booking__visual-types">
+            <div class="booking__type">
+              <div class="booking__type-dot"></div>
+              <div>
+                <strong>Standard Consultation</strong>
+                <span>30 minutes — Medicare, ACA, general questions</span>
+              </div>
+            </div>
+            <div class="booking__type">
+              <div class="booking__type-dot booking__type-dot--lg"></div>
+              <div>
+                <strong>Planning Session</strong>
+                <span>60 minutes — Social Security & Medicare strategy</span>
+              </div>
+            </div>
+          </div>
+
+          <a href=""
+             class="booking__visual-btn"
+             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jesse-jgquality'});return false;">
+            View Available Times
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Calendly script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</section>
+
+
+<!-- END BOOKING SECTION ═════════════════════════ -->
+
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT SLIM
+════════════════════════════════════════════════ -->
+
+<section class="contact-slim" id="contact">
+  <div class="container">
+
+    <div class="contact-slim__inner">
+
+      <!-- Left: Heading + CTA -->
+      <div class="contact-slim__content">
+        <span class="section-label">Get in Touch</span>
+        <h2>Have a Question?</h2>
+        <div class="divider"></div>
+        <p>
+          Reach out directly by phone or email, or visit the office.
+          Jesse is happy to answer any questions before you book.
+        </p>
+        <a href="/contact.html" class="btn btn--primary">Send a Message</a>
+      </div>
+
+      <!-- Right: Contact details -->
+      <div class="contact-slim__details">
+
+        <a href="tel:9562823488" class="contact-slim__item">
+          <div class="contact-slim__icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3h4l2 5-2.5 1.5a11 11 0 005 5L13 12l5 2v4a1 1 0 01-1 1C7 20 1 13 1 5a1 1 0 011-1z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-slim__label">Phone</span>
+            <span class="contact-slim__value">(956) 282-3488</span>
+          </div>
+        </a>
+
+        <a href="mailto:jesse@jgqualityhealthassurance.com" class="contact-slim__item">
+          <div class="contact-slim__icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4h16v12H2zM2 4l8 7 8-7"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-slim__label">Email</span>
+            <span class="contact-slim__value">jesse@jgqualityhealthassurance.com</span>
+          </div>
+        </a>
+
+        <div class="contact-slim__item">
+          <div class="contact-slim__icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 18s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/>
+              <circle cx="10" cy="8" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="contact-slim__label">Office</span>
+            <span class="contact-slim__value">2212 N. Seymour Ave, Laredo, TX 78040</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END CONTACT SLIM ════════════════════════════ -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+
+      <!-- Col 1: Brand -->
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="/assets/logo/JG_LOGO_transparent.png" alt="JG Quality Health Assurance" />
+        </div>
+        <p>
+          Independent insurance brokerage serving individuals, families, and
+          small businesses in Laredo, TX and surrounding areas.
+        </p>
+        <p class="footer__license">
+          Licensed Insurance Broker — State of Texas
+        </p>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="footer__nav">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer__nav">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:9562823488">(956) 282-3488</a></li>
+          <li><a href="mailto:jesse@jgqualityhealthassurance.com">jesse@jgqualityhealthassurance.com</a></li>
+          <li><a href="#">2212 N. Seymour Ave<br/>Laredo, TX 78040</a></li>
+          <li><a href="#book">Book a Free Consultation</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <p>
+        &copy; 2025 JG Quality Health Assurance LLC. All rights reserved. &nbsp;|&nbsp;
+        Website by <a href="https://bttrstudios.com" target="_blank" rel="noopener">Bettr Studios LLC</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- END FOOTER ══════════════════════════════════ -->
+
+    <script src="/js/navbar.js"></script>
+
+</body>
+</html>
