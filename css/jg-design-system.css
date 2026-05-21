@@ -1586,6 +1586,182 @@ a.contact-slim__item:hover {
 }
 
 /* ============================================================
+   22.5 MAILCHIMP Styling (newsletter form on homepage)
+    NEWSLETTER SECTION
+   ============================================================ */
+
+.newsletter {
+  background-color: var(--color-navy);
+  padding: var(--space-4xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(74, 144, 217, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.newsletter__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.newsletter__text .section-label { color: var(--color-caroline-blue); }
+
+.newsletter__text h2 {
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.newsletter__text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-base);
+  line-height: 1.75;
+}
+
+.newsletter__form-wrap {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+}
+
+/* Kill Mailchimp default styles */
+#mc_embed_signup {
+  background: transparent !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--text-base) !important;
+  width: 100% !important;
+  clear: none !important;
+}
+
+#mc_embed_signup form {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.newsletter__field-row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-end;
+}
+
+.newsletter__field { flex: 1; }
+
+.newsletter__field label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-xs);
+}
+
+.newsletter__required {
+  color: var(--color-caroline-blue);
+  font-size: var(--text-xs);
+}
+
+.newsletter__field input[type="email"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-navy);
+  background: var(--color-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+.newsletter__field input[type="email"]:focus {
+  border-color: var(--color-caroline-blue);
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+}
+
+.newsletter__field input[type="email"]::placeholder {
+  color: var(--color-text-muted);
+}
+
+.newsletter__submit-wrap { flex-shrink: 0; }
+
+.newsletter__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body) !important;
+  font-size: var(--text-base) !important;
+  font-weight: 600;
+  color: var(--color-white) !important;
+  background: var(--color-caroline-blue) !important;
+  border: 2px solid var(--color-caroline-blue) !important;
+  border-radius: var(--radius-md) !important;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.newsletter__btn:hover {
+  background: var(--color-white) !important;
+  color: var(--color-navy) !important;
+  border-color: var(--color-white) !important;
+  transform: translateY(-1px);
+}
+
+.newsletter__response {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.newsletter__response--error {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #ff8080;
+}
+
+.newsletter__response--success {
+  background: rgba(74, 144, 217, 0.15);
+  border: 1px solid rgba(74, 144, 217, 0.3);
+  color: var(--color-caroline-blue);
+}
+
+.newsletter__disclaimer {
+  margin-top: var(--space-md);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .newsletter__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .newsletter__field-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter__btn {
+    width: 100%;
+  }
+}
+/* ============================================================
    23. Contact.HTML
    ============================================================ */
 
