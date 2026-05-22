@@ -897,6 +897,140 @@ section {
   flex-shrink: 0;
 }
 
+/* ============================================================
+   12.5 CARRIER TICKER
+   ============================================================ */
+
+/* ── Section ──────────────────────────────────────────────── */
+.carrier-ticker {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-light-gray);
+  overflow: hidden;
+}
+
+.carrier-ticker__header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  padding: 0 var(--space-xl);
+}
+
+.carrier-ticker__header p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin-inline: auto;
+  margin-top: var(--space-xs);
+}
+
+/* ── Track wrapper — clips overflow and holds fade edges ── */
+.carrier-ticker__track-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fade edges left and right */
+.carrier-ticker__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carrier-ticker__fade--left {
+  left: 0;
+  background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
+}
+
+.carrier-ticker__fade--right {
+  right: 0;
+  background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
+}
+
+/* ── Scrolling track ──────────────────────────────────────── */
+.carrier-ticker__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xl);
+  width: max-content;
+
+  /* Infinite scroll animation */
+  animation: ticker-scroll 35s linear infinite;
+}
+
+/* Slow down on hover */
+.carrier-ticker__track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Individual logo item ─────────────────────────────────── */
+.carrier-ticker__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--space-sm) var(--space-md);
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter var(--transition-base), opacity var(--transition-base);
+}
+
+.carrier-ticker__item:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.carrier-ticker__item img {
+  height: 65px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Keyframe animation ───────────────────────────────────── */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves exactly half the track width — where the duplicate set begins */
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .carrier-ticker__item img {
+    height: 48px;
+    max-width: 140px;
+  }
+
+  .carrier-ticker__track {
+    gap: var(--space-2xl);
+    /* Slightly faster on mobile since screen is narrower */
+    animation-duration: 25s;
+  }
+
+  .carrier-ticker__fade {
+    width: 60px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .carrier-ticker__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 0 var(--space-xl);
+  }
+}
 
 /* ============================================================
    13. ABOUT
