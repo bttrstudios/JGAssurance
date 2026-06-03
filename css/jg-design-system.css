@@ -897,6 +897,140 @@ section {
   flex-shrink: 0;
 }
 
+/* ============================================================
+   12.5 CARRIER TICKER
+   ============================================================ */
+
+/* ── Section ──────────────────────────────────────────────── */
+.carrier-ticker {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-light-gray);
+  overflow: hidden;
+}
+
+.carrier-ticker__header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  padding: 0 var(--space-xl);
+}
+
+.carrier-ticker__header p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin-inline: auto;
+  margin-top: var(--space-xs);
+}
+
+/* ── Track wrapper — clips overflow and holds fade edges ── */
+.carrier-ticker__track-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fade edges left and right */
+.carrier-ticker__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carrier-ticker__fade--left {
+  left: 0;
+  background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
+}
+
+.carrier-ticker__fade--right {
+  right: 0;
+  background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
+}
+
+/* ── Scrolling track ──────────────────────────────────────── */
+.carrier-ticker__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xl);
+  width: max-content;
+
+  /* Infinite scroll animation */
+  animation: ticker-scroll 35s linear infinite;
+}
+
+/* Slow down on hover */
+.carrier-ticker__track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Individual logo item ─────────────────────────────────── */
+.carrier-ticker__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--space-sm) var(--space-md);
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter var(--transition-base), opacity var(--transition-base);
+}
+
+.carrier-ticker__item:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.carrier-ticker__item img {
+  height: 65px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Keyframe animation ───────────────────────────────────── */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves exactly half the track width — where the duplicate set begins */
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .carrier-ticker__item img {
+    height: 48px;
+    max-width: 140px;
+  }
+
+  .carrier-ticker__track {
+    gap: var(--space-2xl);
+    /* Slightly faster on mobile since screen is narrower */
+    animation-duration: 25s;
+  }
+
+  .carrier-ticker__fade {
+    width: 60px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .carrier-ticker__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 0 var(--space-xl);
+  }
+}
 
 /* ============================================================
    13. ABOUT
@@ -2128,4 +2262,279 @@ a.contact-page__item:hover {
   body { padding-top: 96px; }
   .container { padding-inline: var(--space-md); }
   .navbar__inner { padding: 0 1rem; }
+}
+
+
+/* ============================================================
+   BIOGRAPHY PAGE — biography.html
+   Append to jg-design-system.css
+   ============================================================ */
+
+/* ── Bio Main Section ─────────────────────────────────────── */
+.bio-main { padding: var(--space-4xl) 0; }
+
+.bio-main__grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+/* ── Left: Image Column ───────────────────────────────────── */
+.bio-main__photo-wrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.bio-main__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Quick facts card */
+.bio-main__facts {
+  background: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.bio-main__facts h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-navy);
+  margin-bottom: var(--space-lg);
+}
+
+.bio-main__facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.bio-main__fact {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.bio-main__fact svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-caroline-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bio-main__fact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.bio-main__fact-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+}
+
+.bio-main__fact-value {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-navy);
+  line-height: 1.4;
+}
+
+/* ── Right: Content ───────────────────────────────────────── */
+.bio-main__title-line {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.bio-main__content h2 {
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.bio-main__content p {
+  color: var(--color-text-body);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+/* Personal note box */
+.bio-main__personal {
+  background: var(--color-off-white);
+  border-left: 3px solid var(--color-caroline-blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.bio-main__personal h4 {
+  font-size: var(--text-base);
+  color: var(--color-navy);
+  margin-bottom: var(--space-sm);
+}
+
+.bio-main__personal p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.bio-main__ctas {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+/* ── Credentials Section ──────────────────────────────────── */
+.bio-credentials {
+  padding: var(--space-4xl) 0;
+  background: var(--color-white);
+}
+
+.bio-credentials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.bio-credential-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+}
+
+.bio-credential-card:hover {
+  border-color: var(--color-caroline-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.bio-credential-card__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(74, 144, 217, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-caroline-blue);
+  margin-bottom: var(--space-md);
+}
+
+.bio-credential-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bio-credential-card h4 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: var(--space-xs);
+}
+
+.bio-credential-card__source {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-caroline-blue);
+  margin-bottom: var(--space-sm);
+}
+
+.bio-credential-card p:last-child {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── CTA Banner ───────────────────────────────────────────── */
+.bio-cta { padding: var(--space-4xl) 0; }
+
+.bio-cta__inner {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.bio-cta__inner h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.bio-cta__inner p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+.bio-cta__btns {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .bio-main__grid {
+    grid-template-columns: 320px 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-main__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-main__photo-wrap {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .bio-credentials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-main__ctas {
+    flex-direction: column;
+  }
+
+  .bio-main__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bio-cta__btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio-cta__btns .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 320px;
+  }
 }
