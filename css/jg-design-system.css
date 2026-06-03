@@ -2263,3 +2263,278 @@ a.contact-page__item:hover {
   .container { padding-inline: var(--space-md); }
   .navbar__inner { padding: 0 1rem; }
 }
+
+
+/* ============================================================
+   BIOGRAPHY PAGE — biography.html
+   Append to jg-design-system.css
+   ============================================================ */
+
+/* ── Bio Main Section ─────────────────────────────────────── */
+.bio-main { padding: var(--space-4xl) 0; }
+
+.bio-main__grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+/* ── Left: Image Column ───────────────────────────────────── */
+.bio-main__photo-wrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.bio-main__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Quick facts card */
+.bio-main__facts {
+  background: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.bio-main__facts h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-navy);
+  margin-bottom: var(--space-lg);
+}
+
+.bio-main__facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.bio-main__fact {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.bio-main__fact svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-caroline-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bio-main__fact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.bio-main__fact-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+}
+
+.bio-main__fact-value {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-navy);
+  line-height: 1.4;
+}
+
+/* ── Right: Content ───────────────────────────────────────── */
+.bio-main__title-line {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.bio-main__content h2 {
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
+.bio-main__content p {
+  color: var(--color-text-body);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+/* Personal note box */
+.bio-main__personal {
+  background: var(--color-off-white);
+  border-left: 3px solid var(--color-caroline-blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.bio-main__personal h4 {
+  font-size: var(--text-base);
+  color: var(--color-navy);
+  margin-bottom: var(--space-sm);
+}
+
+.bio-main__personal p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.bio-main__ctas {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+/* ── Credentials Section ──────────────────────────────────── */
+.bio-credentials {
+  padding: var(--space-4xl) 0;
+  background: var(--color-white);
+}
+
+.bio-credentials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.bio-credential-card {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+}
+
+.bio-credential-card:hover {
+  border-color: var(--color-caroline-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.bio-credential-card__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(74, 144, 217, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-caroline-blue);
+  margin-bottom: var(--space-md);
+}
+
+.bio-credential-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bio-credential-card h4 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: var(--space-xs);
+}
+
+.bio-credential-card__source {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-caroline-blue);
+  margin-bottom: var(--space-sm);
+}
+
+.bio-credential-card p:last-child {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── CTA Banner ───────────────────────────────────────────── */
+.bio-cta { padding: var(--space-4xl) 0; }
+
+.bio-cta__inner {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.bio-cta__inner h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.bio-cta__inner p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+.bio-cta__btns {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .bio-main__grid {
+    grid-template-columns: 320px 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-main__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-main__photo-wrap {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .bio-credentials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-main__ctas {
+    flex-direction: column;
+  }
+
+  .bio-main__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bio-cta__btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio-cta__btns .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 320px;
+  }
+}
