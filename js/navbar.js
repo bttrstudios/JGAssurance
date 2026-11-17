@@ -23,20 +23,39 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 900) closeMenu();
 });
 
-/* ── Active link on scroll (optional — uses IntersectionObserver) ── */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.navbar__links a, .navbar__mobile a');
+/* ── Active nav link ──
+   Nav hrefs are absolute ("/index.html#about", "/services.html"), so compare
+   normalized pathname + hash rather than raw attribute strings. */
+const normalizePath = (p) => (p === '/' ? '/index.html' : p);
+const currentPath   = normalizePath(window.location.pathname);
+const navLinks      = document.querySelectorAll('.navbar__links a, .navbar__mobile a:not(.navbar__cta)');
 
-if (sections.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-        });
-        }
+function setActive(matchFn) {
+    navLinks.forEach(link => {
+        const url = new URL(link.href, window.location.origin);
+        link.classList.toggle('active', matchFn(normalizePath(url.pathname), url.hash));
     });
-    }, { rootMargin: '-50% 0px -50% 0px' });
+}
 
+// Page-level highlight (e.g. "Meet the Team" on biography.html)
+setActive((path, hash) => path === currentPath && !hash);
+
+// Section-level highlight while scrolling the homepage
+if (currentPath === '/index.html') {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setActive((path, hash) => path === currentPath && hash === '#' + entry.target.id);
+            }
+        });
+    }, { rootMargin: '-50% 0px -50% 0px' });
     sections.forEach(s => observer.observe(s));
 }
+
+/* ── Footer copyright range: "2026" → "2026–2027" automatically ── */
+const SITE_LAUNCH_YEAR = 2026;
+const thisYear = new Date().getFullYear();
+document.querySelectorAll('.js-year-range').forEach(el => {
+    if (thisYear > SITE_LAUNCH_YEAR) el.textContent = '–' + thisYear;
+});
